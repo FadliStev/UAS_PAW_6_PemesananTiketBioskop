@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming Movies</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS Anda di sini */
+      body,
+      html {
+        font-family: "Poppins", sans-serif;
+        background-color: #141414;
+        color: #ffffff;
+        min-height: 100vh;
+      }
+      .cinema-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
+      .navbar {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+      }
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+      .nav-link {
+        color: #ffffff !important;
+        margin: 0 5px;
+      }
+      .nav-link:hover {
+        color: #3498db !important;
+      }
+      .nav-item.active .nav-link {
+        color: #3498db !important;
+      }
+      .container {
+        padding: 20px;
+        margin-top: 80px; /* Tambahkan margin untuk menghindari navbar */
+      }
+      .header {
+        background-color: #00796b;
+        color: white;
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 5px;
+      }
+      .movies {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .movie {
+        text-align: center;
+        margin: 10px;
+        flex: 1 1 20%;
+        max-width: 20%;
+      }
+      .movie img {
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer; /* Menambahkan kursor pointer untuk menunjukkan bahwa gambar dapat diklik */
+      }
+      .movie-title {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      @media (max-width: 768px) {
+        .movie {
+          flex: 1 1 45%;
+          max-width: 45%;
+        }
+      }
+      @media (max-width: 480px) {
+        .movie {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cinema-background"></div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <a
+        class="navbar-brand animate__animated animate__fadeIn d-flex align-items-center"
+        href="<%= url %>"
+      >
+        <img
+          src="https://i.pinimg.com/736x/1c/c4/c9/1cc4c9eb92e33ecb9239635bab7a5428.jpg"
+          alt="Logo Bioskop"
+          style="height: 40px; margin-right: 10px"
+        />
+        Dunia Bioskop
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link animate__animated animate__fadeInDown"
+              href="<%= url %>"
+            >
+              <i class="fa fa-home"></i> Beranda
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a
+              class="nav-link animate__animated animate__fadeInDown"
+              href="<%= url %>todos"
+            >
+              <i class="fa fa-film"></i> Upcoming
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link animate__animated animate__fadeInDown"
+              href="<%= url %>tiket"
+            >
+              <i class="fa fa-envelope"></i> Ticket
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link animate__animated animate__fadeInDown"
+              href="<%= url %>login/logout"
+            >
+              <i class="fa fa-sign-out"></i> Keluar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="header">UPCOMING MOVIES</div>
+      <div class="movies">
+        <div class="movie">
+          <a href="<%= url %>detailupcoming/anak-kunti">
+            <img
+              alt="Anak Kunti"
+              height="300"
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173442821784752_211x310.jpg"
+              width="200"
+            />
+          </a>
+          <div class="movie-title">Anak Kunti</div>
+        </div>
+        <div class="movie">
+          <a href="<%= url %>detailupcoming/petaka-gunung-gede">
+            <img
+              alt="Petaka Gunung Gede"
+              height="300"
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173442927160239_211x310.jpg"
+              width="200"
+            />
+          </a>
+          <div class="movie-title">Petaka Gunung Gede</div>
+        </div>
+        <div class="movie">
+          <a href="<%= url %>detailupcoming/elang">
+            <img
+              alt="Elang"
+              height="300"
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173408908582257_211x310.jpg"
+              width="200"
+            />
+          </a>
+          <div class="movie-title">Elang</div>
+        </div>
+        <div class="movie">
+          <a href="<%= url %>detailupcoming/1-imam-2-makmum">
+            <img
+              alt="1 Imam 2 Makmum"
+              height="300"
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/17334887117756_211x310.jpg"
+              width="200"
+            />
+          </a>
+          <div class="movie-title">1 Imam 2 Makmum</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Bootstrap dan dependensinya -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

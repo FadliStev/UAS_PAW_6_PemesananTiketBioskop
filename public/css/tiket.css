@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  min-height: 100vh;
+}
+.cinema-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.navbar {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+.nav-link {
+  color: #ffffff !important;
+  margin: 0 5px;
+}
+.nav-link:hover {
+  color: #3498db !important;
+}
+.nav-item.active .nav-link {
+  color: #3498db !important;
+}
+
+/* Movie Detail Section */
+#movieDetail {
+  background: rgba(17, 25, 40, 0.8);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding: 2rem;
+}
+
+#movieImage {
+  height: 300px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: block;
+}
+
+/* Form Styling */
+#ticketForm {
+  background: rgba(17, 25, 40, 0.8);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+select,
+input {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid rgba(96, 165, 250, 0.2) !important;
+  color: #e2e8f0 !important;
+  transition: border-color 0.3s ease;
+}
+
+select:focus,
+input:focus {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
+}
+
+/* Seat Selection */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* Changed from 5 to 10 columns */
+  gap: 0.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.seat-button {
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 2px solid #4b5563;
+  color: #e2e8f0;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 35px;
+  font-size: 0.9rem;
+}
+
+.seat-button:hover {
+  background-color: rgba(96, 165, 250, 0.2);
+  border-color: #60a5fa;
+  transform: scale(1.05);
+}
+
+.seat-button.selected {
+  background-color: #60a5fa;
+  border-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+}
+
+/* Screen Visualization */
+.screen {
+  width: 80%;
+  height: 5px;
+  background: linear-gradient(to right, transparent, #60a5fa, transparent);
+  margin: 2rem auto;
+  position: relative;
+}
+
+.screen::before {
+  content: "LAYAR";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #60a5fa;
+  font-size: 0.9rem;
+}
+
+.mb-4 {
+  text-align: center; /* Mengatur teks di dalam div menjadi rata tengah */
+}
+
+.payment-options {
+  display: flex; /* Menggunakan flexbox untuk payment options */
+  justify-content: center; /* Mengatur payment options di tengah */
+  margin-bottom: 1rem; /* Memberikan jarak di bawah payment options */
+}
+
+.payment-option {
+  width: 50px; /* Atur lebar payment option */
+  height: 50px; /* Atur tinggi payment option */
+  margin: 0 10px; /* Memberikan jarak antar payment option */
+  border-radius: 5px; /* Membuat sudut membulat */
+}
+
+.button-container {
+  display: flex; /* Menggunakan flexbox untuk button container */
+  flex-direction: column; /* Mengatur tombol dalam kolom */
+  align-items: center; /* Mengatur tombol di tengah */
+}
+
+/* Buttons */
+button[type="submit"],
+#viewTicketsButton {
+  background: linear-gradient(45deg, #3b82f6, #60a5fa);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover,
+#viewTicketsButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+}
+
+/* Tickets Table */
+#ticketsList {
+  background: rgba(17, 25, 40, 0.8);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0;
+}
+
+th {
+  background-color: rgba(30, 41, 59, 0.8);
+  color: #60a5fa;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+td {
+  padding: 1rem;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+/* Cancel Button in Table */
+.text-red-500 {
+  color: #ef4444;
+  background: none;
+  border: 1px solid #ef4444;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.text-red-500:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Ticket Code Section */
+#ticketCode {
+  background: rgba(17, 25, 40, 0.8);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 12px;
+  text-align: center;
+}
+
+#code {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #60a5fa;
+  letter-spacing: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(5, 1fr); /* Fewer columns on mobile */
+  }
+
+  .seat-button {
+    padding: 0.35rem;
+    font-size: 0.8rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

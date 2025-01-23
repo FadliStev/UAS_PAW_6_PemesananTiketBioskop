@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Dunia Bioskop</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img
+          src="https://i.pinimg.com/736x/1c/c4/c9/1cc4c9eb92e33ecb9239635bab7a5428.jpg"
+          alt="Logo Bioskop"
+          style="height: 40px; margin-right: 10px"
+        />
+        Admin Panel
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/admin/dashboard">
+              <i class="fas fa-home"></i> Dashboard
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= url %>tiket">
+              <i class="fas fa-ticket-alt"></i> Mutasi Tiket
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= url %>todos">
+              <i class="fas fa-film"></i> Kelola Film
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= url %>profile">
+              <i class="fas fa-users"></i> Kelola User
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+            >
+              <i class="fas fa-user-circle"></i> <%= username %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="/admin/profile">
+                <i class="fas fa-id-card"></i> Profile
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="<%= url %>login/logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <!-- Stats Cards -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                  >
+                    Total Pemesanan
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">215</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-success text-uppercase mb-1"
+                  >
+                    Pendapatan
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Rp 5.215.000
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-info text-uppercase mb-1"
+                  >
+                    Film Aktif
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">6</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-film fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-warning text-uppercase mb-1"
+                  >
+                    Total User
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-users fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card shadow mb-4">
+            <div
+              class="card-header py-3 d-flex justify-content-between align-items-center"
+            >
+              <h6 class="m-0 font-weight-bold text-primary">
+                Pemesanan Terbaru
+              </h6>
+              <a href="/admin/mutasi" class="btn btn-primary btn-sm">
+                Lihat Semua
+              </a>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Kode Tiket</th>
+                      <th>Film</th>
+                      <th>Pembeli</th>
+                      <th>Tanggal</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>TIX-001</td>
+                      <td>Moon Knight</td>
+                      <td>John Doe</td>
+                      <td>2024-03-20</td>
+                      <td><span class="badge badge-success">Sukses</span></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      body {
+        background: #141414;
+        color: #ffffff;
+      }
+
+      .navbar {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: #e50914 !important;
+      }
+
+      .nav-link {
+        color: #ffffff !important;
+        margin: 0 5px;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #e50914 !important;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        backdrop-filter: blur(10px);
+      }
+
+      .border-left-primary {
+        border-left: 4px solid #4e73df !important;
+      }
+
+      .border-left-success {
+        border-left: 4px solid #1cc88a !important;
+      }
+
+      .border-left-info {
+        border-left: 4px solid #36b9cc !important;
+      }
+
+      .border-left-warning {
+        border-left: 4px solid #f6c23e !important;
+      }
+
+      .dropdown-menu {
+        background: rgba(0, 0, 0, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .dropdown-item {
+        color: #ffffff;
+      }
+
+      .dropdown-item:hover {
+        background: rgba(229, 9, 20, 0.1);
+        color: #e50914;
+      }
+
+      .table {
+        color: #ffffff;
+      }
+
+      .badge {
+        padding: 0.5em 1em;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

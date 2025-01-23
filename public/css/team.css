@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+header h1 {
+  margin: 20px;
+  color: #0974ff;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+header h2 {
+  color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.team-member img {
+  width: 50%;
+  height: 50%;
+  border-radius: 10px;
+}
+
+.team-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+}
+
+.team-member {
+  text-align: center;
+  max-width: 200px;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  margin-top: 20px;
+  background: #555555;
+  padding: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

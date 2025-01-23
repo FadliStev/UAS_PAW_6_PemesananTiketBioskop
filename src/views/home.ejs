@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bioskop Home</title>
+    <!-- CSS -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <!-- JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="cinema-background"></div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <a
+        class="navbar-brand animate__animated animate__fadeIn d-flex align-items-center"
+        href="<%= url %>"
+      >
+        <img
+          src="https://i.pinimg.com/736x/1c/c4/c9/1cc4c9eb92e33ecb9239635bab7a5428.jpg"
+          alt="Logo Bioskop"
+          style="height: 40px; margin-right: 10px"
+        />
+        Dunia Bioskop
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Ganti ml-auto dengan ms-auto -->
+          <li class="nav-item active">
+            <a
+              class="nav-link animate__animated animate__fadeInDown"
+              href="<%= url %>"
+            >
+              <i class="fa fa-home"></i> Beranda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link animate__animated animate__fadeInDown"
+              href="<%= url %>upcoming"
+            >
+              <i class="fa fa-envelope"></i> upcoming
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link animate__animated animate__fadeInDown"
+              href="<%= url %>tiket"
+            >
+              <i class="fa fa-ticket"></i> Tiket
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle animate__animated animate__fadeInDown"
+              href="#"
+              id="navbarDropdownMenuLink"
+              data-bs-toggle="dropdown"
+              <!--
+              Ganti
+              data-toggle
+              dengan
+              data-bs-toggle
+              --
+            >
+              <i class="fa fa-user-circle"></i> <%= userName %>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <a class="dropdown-item" href="<%= url %>profile">
+                <i class="fa fa-id-card"></i> Profil
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="<%= url %>login/logout">
+                <i class="fa fa-sign-out"></i> Keluar
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      id="carouselExampleInterval"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img
+            src="https://web3.21cineplex.com/mobile-banner/DOT2_1600x440.jpg"
+            class="d-block w-100"
+            alt="fathur"
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="https://web3.21cineplex.com/mobile-banner/Mufasa%20IMAX%20msite.jpg"
+            class="d-block w-100"
+            alt="fathur"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://web3.21cineplex.com/mobile-banner/1K7P_headline%20msite%201600x440%20px.jpg"
+            class="d-block w-100"
+            alt="fathur"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!--<div class="container-fluid bg-dark text-light" style="height: 65vh"> -->
+    <header class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 animate__animated animate__fadeInLeft">
+            <h1>Selamat Datang di Dunia Bioskop</h1>
+            <p>
+              Nikmati pengalaman menonton film yang belum pernah ada sebelumnya
+              dengan kenyamanan dan gaya terbaik
+            </p>
+            <a href="#nowplaying" class="btn btn-danger cinema-btn btn-lg">
+              <i class="fa fa-ticket"></i> Pesan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-title animate__animated animate__fadeInUp">
+          Fitur Kami
+        </h2>
+        <div class="row">
+          <div class="col-md-4 animate__animated animate__fadeInUp">
+            <div class="feature-card">
+              <img
+                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1"
+                alt="Pengalaman Film Terbaru"
+                class="feature-banner"
+              />
+              <h3>Film Terbaru</h3>
+              <p>Tonton film blockbuster terbaru dengan kualitas mengagumkan</p>
+            </div>
+          </div>
+          <div
+            class="col-md-4 animate__animated animate__fadeInUp"
+            style="animation-delay: 0.2s"
+          >
+            <div class="feature-card">
+              <img
+                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c"
+                alt="Pengalaman Kenyamanan "
+                class="feature-banner"
+              />
+              <h3>Kenyamanan</h3>
+              <p>Tempat duduk mewah untuk pengalaman menonton terbaik</p>
+            </div>
+          </div>
+          <div
+            class="col-md-4 animate__animated animate__fadeInUp"
+            style="animation-delay: 0.4s"
+          >
+            <div class="feature-card">
+              <img
+                src="https://images.unsplash.com/photo-1521967906867-14ec9d64bee8"
+                alt="Pengalaman Cemilan Lezat"
+                class="feature-banner"
+              />
+              <h3>Cemilan Lezat</h3>
+              <p>Berbagai pilihan makanan ringan dan minuman segar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-title animate__animated animate__fadeInUp">
+      Daftar Film
+    </h2>
+    <div class="header">NOW PLAYING</div>
+
+    <section class="movies-section" id="nowplaying">
+      <div class="container">
+        <div class="movie">
+          <div
+            class="movie-card"
+            onclick="selectMovie('Den of Thieves 2: Pantera')"
+          >
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173347020029722_290x426.jpg"
+              alt="Den of Thieves 2: Pantera"
+            />
+            <div class="movie-title">Den of Thieves 2: Pantera</div>
+            <div class="rating d17">D17+</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="movie-card" onclick="selectMovie('The Prosecutor')">
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173338511328812_290x426.jpg"
+              alt="Poster of The Prosecutor"
+            />
+            <div class="movie-title">The Prosecutor</div>
+            <div class="rating d17">D17+</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="movie-card" onclick="selectMovie('Sonic the Hedgehog 3')">
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173338498787278_290x426.jpg"
+              alt="Poster of Sonic the Hedgehog 3"
+            />
+            <div class="movie-title">Sonic the Hedgehog 3</div>
+            <div class="rating su">SU</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div
+            class="movie-card"
+            onclick="selectMovie('Mufasa: The Lion King')"
+          >
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173330898736407_290x426.jpg"
+              alt="Poster of Mufasa: The Lion King"
+            />
+            <div class="movie-title">Mufasa: The Lion King</div>
+            <div class="rating su">SU</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="movie-card" onclick="selectMovie('Utusan Iblis')">
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173371712055774_290x426.jpg"
+              alt="Poster of Utusan Iblis"
+            />
+            <div class="movie-title">Utusan Iblis</div>
+            <div class="rating d13">D13+</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="movie-card" onclick="selectMovie('Wicked')">
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173028689721914_290x426.jpg"
+              alt="Poster of Wicked"
+            />
+            <div class="movie-title">Wicked</div>
+            <div class="rating su">SU</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="movie-card" onclick="selectMovie('Ketindihan')">
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173433414771272_290x426.jpg"
+              alt="Poster of Ketindihan"
+            />
+            <div class="movie-title">Ketindihan</div>
+            <div class="rating d17">D17</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="movie-card" onclick="selectMovie('Surup')">
+            <img
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/173381659593571_290x426.jpg"
+              alt="Poster of Surup"
+            />
+            <div class="movie-title">Surup</div>
+            <div class="rating d17">D17</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function selectMovie(movieName) {
+        localStorage.setItem("selectedMovie", movieName);
+        window.location.href = "<%= url %>tiket"; // Ganti dengan URL halaman pemesanan tiket Anda
+      }
+    </script>
+
+    <!-- Footer -->
+    <footer class="navbar navbar-expand-lg navbar-dark bg-dark mt-4">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <span class="navbar-text text-light">
+          &copy; 2025 Dunia Bioskop |
+          <a href="/team" class="text-light text-decoration-none">My Team</a>
+        </span>
+        <a
+          href="https://github.com/your-github-profile"
+          class="btn btn-outline-light btn-sm"
+          target="_blank"
+        >
+          <i class="fa fa-github"></i> GitHub
+        </a>
+      </div>
+    </footer>
+
+    <!-- JS Bootstrap dan dependensinya -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body,
+      html {
+        font-family: "Poppins", sans-serif;
+        background-color: #141414;
+        color: #ffffff;
+        min-height: 100vh;
+      }
+
+      .cinema-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
+
+      .navbar {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+
+      .nav-link {
+        color: #ffffff !important;
+        margin: 0 5px;
+      }
+
+      .nav-link:hover {
+        color: #3498db !important;
+      }
+
+      .nav-item.active .nav-link {
+        color: #3498db !important;
+      }
+
+      .carousel-inner img {
+        margin-top: 80px; /* Atur nilai ini sesuai kebutuhan */
+      }
+
+      .hero-section {
+        padding: 80px 0 100px;
+        text-align: center;
+        background: linear-gradient(
+          rgba(38, 49, 78, 0.3),
+          rgba(42, 42, 62, 0.3)
+        );
+      }
+
+      .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+        text-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #f0f0f0;
+      }
+
+      .cinema-btn {
+        padding: 12px 30px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .cinema-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+      }
+
+      .features-section {
+        padding: 50px 0;
+        background: linear-gradient(
+          135deg,
+          rgba(38, 49, 78, 0.8),
+          rgba(42, 42, 62, 0.8)
+        );
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 4rem;
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(229, 9, 20, 0.2);
+      }
+
+      .feature-card {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+      }
+
+      .feature-banner {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #e50914;
+      }
+
+      .feature-card p {
+        color: #f0f0f0;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .dropdown-menu {
+        background: rgba(0, 0, 0, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 100px rgb(0, 0, 0);
+      }
+
+      .dropdown-item {
+        color: #ffffff;
+        transition: all 0.3s ease;
+      }
+
+      .dropdown-item:hover {
+        background: rgba(229, 9, 20, 0.1);
+        color: #e50914;
+      }
+
+      .dropdown-divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .h2 {
+        padding-bottom: 20px;
+      }
+
+      .header {
+        background-color: #00796b;
+        color: white;
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        margin-left: 50px;
+      }
+
+      .movies-section .container {
+        display: grid; /* Menggunakan grid untuk tata letak */
+        grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom */
+        gap: 20px; /* Jarak antar item */
+        margin-top: 50px; /* Memberikan jarak di atas kontainer */
+      }
+
+      .movie {
+        text-align: center;
+        padding: 5px 10px;
+        margin-bottom: 50px;
+      }
+
+      .movie img {
+        width: 100%; /* Mengatur lebar gambar agar responsif */
+        height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+        border-radius: 5px; /* Sudut melengkung */
+      }
+
+      .movie-title {
+        font-size: 18px; /* Ukuran font untuk judul film */
+        font-weight: bold; /* Menebalkan teks */
+        margin-top: 10px; /* Memberikan jarak di atas judul film */
+      }
+
+      .rating {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      .rating.d13 {
+        background-color: #2b3de0; /* Warna untuk rating d17 */
+        color: #fff; /* Warna teks putih */
+      }
+
+      .rating.d17 {
+        background-color: #e74c3c; /* Warna untuk rating d17 */
+        color: #fff; /* Warna teks putih */
+      }
+
+      .rating.su {
+        background-color: #2ecc71; /* Warna untuk rating su */
+        color: #fff; /* Warna teks putih */
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          text-align: center;
+          padding: 150px 0 50px;
+        }
+
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .feature-card {
+          margin-bottom: 2rem;
+        }
+      }
+    </style>
+  </body>
+</html>
